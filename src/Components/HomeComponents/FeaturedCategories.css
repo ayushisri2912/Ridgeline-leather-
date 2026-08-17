@@ -1,0 +1,33 @@
+/* FeaturedCategories.css - Premium Luxury Categories Slider */
+
+.categories-swiper {
+  padding: 15px 5px 60px !important;
+  overflow: visible !important;
+}
+
+.categories-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+/* Mousewheel smooth scroll helper */
+.categories-swiper .swiper-wrapper {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Glass Badge for Categories */
+.category-badge-glass {
+  background: rgba(245, 241, 232, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 94, 60, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Text Line Clamp 2 lines max */
+.line-clamp-2-custom {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

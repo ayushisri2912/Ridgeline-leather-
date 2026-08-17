@@ -1,0 +1,60 @@
+@import "tailwindcss";
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #FAF8F5;
+  color: #3B2618;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+
+
+/* ===== Premium Announcement Bar ===== */
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 35px;
+  width: max-content;
+  padding: 0;
+
+  color: #F5F1E8;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  animation: marquee 25s linear infinite;
+}
+
+.marquee:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  transition: color 0.3s ease;
+}
+
+.marquee-item:hover {
+  color: #C79A63;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
