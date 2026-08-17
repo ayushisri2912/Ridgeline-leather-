@@ -203,8 +203,7 @@ const Navbar = () => {
                 heading="New Collection"
                 description="Explore handcrafted leather essentials designed for timeless journeys."
                 buttonText="Shop Collection"
-                buttonLink="/shop"
-                activePath="/shop"
+                buttonLink="/shop/all-products"
               />
 
               <MegaMenu
@@ -214,8 +213,7 @@ const Navbar = () => {
                 heading="Built For The Field"
                 description="Professional hunting gear handcrafted with premium leather."
                 buttonText="Explore Gear"
-                buttonLink="/shop"
-                activePath="/hunting-gear"
+                buttonLink="/hunting/rifle-covers"
               />
 
               <MegaMenu
@@ -225,8 +223,7 @@ const Navbar = () => {
                 heading="Travel In Style"
                 description="Luxury duffel, messenger and travel bags crafted to last."
                 buttonText="View Bags"
-                buttonLink="/shop"
-                activePath="/leather-bags"
+                buttonLink="/bags/duffel-bags"
               />
 
               <MegaMenu
@@ -236,8 +233,7 @@ const Navbar = () => {
                 heading="Everyday Essentials"
                 description="Premium wallets, belts and leather accessories for everyday elegance."
                 buttonText="Explore Accessories"
-                buttonLink="/shop"
-                activePath="/accessories"
+                buttonLink="/accessories/wallets"
               />
 
               <MegaMenu
@@ -247,8 +243,7 @@ const Navbar = () => {
                 heading="The Art Of Leather"
                 description="Discover how every Ridgeline product is handcrafted with precision."
                 buttonText="Our Story"
-                buttonLink="/about"
-                activePath="/about"
+                buttonLink="/craftsmanship/our-story"
               />
 
               <MegaMenu
@@ -258,8 +253,7 @@ const Navbar = () => {
                 heading="Outdoor Journal"
                 description="Stories, buying guides and leather care insights from our experts."
                 buttonText="Read Journal"
-                buttonLink="/journal"
-                activePath="/journal"
+                buttonLink="/journal/hunting-shooting"
               />
 
               <MegaMenu
@@ -269,8 +263,7 @@ const Navbar = () => {
                 heading="Get In Touch"
                 description="Have questions or need assistance? Our team is here to help."
                 buttonText="Contact Us"
-                buttonLink="/contact"
-                activePath="/contact"
+                buttonLink="/contact/customer-service"
               />
             </nav>
 
