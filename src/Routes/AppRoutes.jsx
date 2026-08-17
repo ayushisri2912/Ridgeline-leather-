@@ -11,6 +11,7 @@ import GunSlingsPage from '../Pages/huntingGearPages/GunSlingsPage'
 import HuntingAccessoriesPage from '../Pages/huntingGearPages/HuntingAccessoriesPage'
 import LeatherBagsPage from '../Pages/leatherBagPages/LeatherBagsPage'
 import ProductDetailPage from '../Pages/shopPages/ProductDetailPage'
+import Wishlist from '../Pages/Wishlist'
 
 const AppRoutes = () => {
   return (
@@ -32,6 +33,9 @@ const AppRoutes = () => {
       <Route path='/bags/tote-bags' element={<LeatherBagsPage categoryType="tote" />} />
       <Route path='/bags/travel-bags' element={<LeatherBagsPage categoryType="travel" />} />
       
+      {/* Wishlist Page */}
+      <Route path='/wishlist' element={<Wishlist />} />
+
       <Route path='/product/:id' element={<ProductDetailPage />} />
       <Route path='/product-detail' element={<ProductDetailPage />} />
     </Routes>
