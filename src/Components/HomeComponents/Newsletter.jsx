@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { FiMail, FiArrowRight, FiCheckCircle } from "react-icons/fi";
+import { useToast } from "../../Context/ToastContext";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);
+  const { showToast } = useToast();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,6 +16,11 @@ const Newsletter = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubscribed(true);
+      showToast(
+        "Welcome to The Ridgeline Circle! Your 10% discount code is WELCOME10.",
+        "success",
+        "Subscribed Successfully"
+      );
       setEmail("");
     }, 1000);
   };

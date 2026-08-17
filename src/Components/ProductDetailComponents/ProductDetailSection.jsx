@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Star, Heart, ShoppingBag, Check, ShieldCheck, Truck, Minus, Plus } from "lucide-react";
 import { motion } from "framer-motion";
+import { useToast } from "../../Context/ToastContext";
 
 const ProductDetailSection = ({ product, onAddToCart, onBuyNow }) => {
+  const { showToast } = useToast();
   const images = product.images || [product.image];
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [selectedColor, setSelectedColor] = useState(product.colors ? product.colors[0] : null);
@@ -222,7 +224,17 @@ const ProductDetailSection = ({ product, onAddToCart, onBuyNow }) => {
 
               {/* Wishlist Button */}
               <button
-                onClick={() => setIsWishlisted(!isWishlisted)}
+                onClick={() => {
+                  const nextState = !isWishlisted;
+                  setIsWishlisted(nextState);
+                  showToast(
+                    nextState
+                      ? `Added ${product.name} to your Wishlist.`
+                      : `Removed ${product.name} from your Wishlist.`,
+                    "wishlist",
+                    nextState ? "Saved to Wishlist" : "Wishlist Updated"
+                  );
+                }}
                 aria-label="Add to Wishlist"
                 className="p-3.5 rounded-xl border border-[#E8DED4] bg-[#FFFDFC] hover:bg-[#F6F2EC] text-[#3B2618] transition-all cursor-pointer shadow-xs"
               >

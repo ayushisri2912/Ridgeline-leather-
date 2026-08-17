@@ -2,12 +2,14 @@ import React from "react";
 import { X, Minus, Plus, ShoppingBag, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCart } from "../../Context/CartContext";
+import { useToast } from "../../Context/ToastContext";
 
 // Helper image imports for demo items
 import duffelImg from "../../assets/Images/baggs.jpg";
 import pouchImg from "../../assets/Images/cartridge_pouch.jpg";
 
 const CartDrawer = () => {
+  const { showToast } = useToast();
   const {
     cartItems,
     isCartOpen,
@@ -182,7 +184,11 @@ const CartDrawer = () => {
                 </div>
                 <button
                   onClick={() => {
-                    alert("Proceeding to Secure Checkout...");
+                    showToast(
+                      "Proceeding to Secure Luxury Checkout...",
+                      "info",
+                      "Checkout Initiated"
+                    );
                   }}
                   className="w-full py-4 bg-[#3B2618] hover:bg-[#8B5A2B] text-[#FAF8F5] text-xs uppercase font-semibold tracking-[0.2em] rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
                 >

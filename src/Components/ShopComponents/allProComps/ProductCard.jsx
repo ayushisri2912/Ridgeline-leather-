@@ -2,14 +2,24 @@ import React, { useState } from "react";
 import { FiHeart } from "react-icons/fi";
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useToast } from "../../../Context/ToastContext";
 
 const ProductCard = ({ product, viewMode = "grid" }) => {
   const [isWishlisted, setIsWishlisted] = useState(false);
+  const { showToast } = useToast();
 
   const handleWishlistClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    setIsWishlisted(!isWishlisted);
+    const nextState = !isWishlisted;
+    setIsWishlisted(nextState);
+    showToast(
+      nextState
+        ? `Added ${product.name} to your Wishlist.`
+        : `Removed ${product.name} from your Wishlist.`,
+      "wishlist",
+      nextState ? "Saved to Wishlist" : "Wishlist Updated"
+    );
   };
 
   if (viewMode === "list") {

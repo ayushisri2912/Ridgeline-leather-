@@ -6,25 +6,36 @@ import CraftsmanshipHighlights from "../../Components/ProductDetailComponents/Cr
 import ProductInfoTabs from "../../Components/ProductDetailComponents/ProductInfoTabs";
 import RelatedProductsSection from "../../Components/ProductDetailComponents/RelatedProductsSection";
 import { getProductById } from "../../Data/productsData";
+import { useToast } from "../../Context/ToastContext";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
+  const { showToast } = useToast();
 
   const [product, setProduct] = useState(() => getProductById(id));
-  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     setProduct(getProductById(id));
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [id]);
 
-  const handleAddToCart = (item) => {
-    setCartItems((prev) => [...prev, item]);
-    alert(`Added ${product.name} to Cart!`);
+  const handleAddToCart = (selectedColor, selectedSize, qty = 1) => {
+    const colorStr = selectedColor ? (typeof selectedColor === "string" ? selectedColor : selectedColor.name) : "";
+    const details = [colorStr, selectedSize].filter(Boolean).join(" / ");
+    
+    showToast(
+      `Added ${product.name} ${details ? `(${details})` : ""} to your shopping bag.`,
+      "success",
+      "Bag Updated"
+    );
   };
 
   const handleBuyNow = () => {
-    alert(`Proceeding to luxury checkout for ${product.name}`);
+    showToast(
+      `Redirecting to secure luxury checkout for ${product.name}...`,
+      "info",
+      "Checkout Initiated"
+    );
   };
 
   return (
