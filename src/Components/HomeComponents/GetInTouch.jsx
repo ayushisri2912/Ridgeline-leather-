@@ -97,7 +97,7 @@ const GetInTouch = () => {
             {/* Direct Contact Banner */}
             <div className="bg-[#2C2C2C] rounded-2xl p-7 sm:p-8 text-white shadow-xl relative overflow-hidden group">
               {/* Subtle background glow accent */}
-              <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-[#8B4513]/20 rounded-full blur-2xl group-hover:bg-[#8B4513]/30 transition-all duration-500" />
+              <div className="absolute right-0 bottom-0 w-40 h-40 bg-[#8B4513]/20 rounded-full blur-2xl group-hover:bg-[#8B4513]/30 transition-all duration-500" />
 
               <span
                 className="text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#C79A63] font-semibold block mb-2"

@@ -273,11 +273,11 @@ const HeroSection = () => {
           <div className="lg:col-span-5 relative flex justify-center items-center mt-8 lg:mt-0">
             
             {/* Matrix Dot Accent Pattern Behind Image Right Side */}
-            <div className="absolute -right-5 bottom-10 w-28 h-40 dot-matrix-pattern-large opacity-35 rounded-lg pointer-events-none hidden sm:block z-0" />
+            <div className="absolute right-0 bottom-10 w-28 h-40 dot-matrix-pattern-large opacity-35 rounded-lg pointer-events-none hidden sm:block z-0" />
 
             {/* Warm Glow directly behind Image Container */}
             <motion.div
-              className="absolute -left-8 top-1/3 w-72 h-72 bg-[#C88A58]/30 rounded-full blur-3xl pointer-events-none -z-0"
+              className="absolute left-0 top-1/3 w-72 h-72 bg-[#C88A58]/30 rounded-full blur-3xl pointer-events-none -z-0"
               variants={ambientGlowPulse}
               animate="animate"
             />
@@ -300,7 +300,7 @@ const HeroSection = () => {
 
               {/* Floating Glass Card Badge */}
               <motion.div
-                className="glass-badge-luxury absolute -top-4 right-2 sm:top-8 sm:-right-8 rounded-2xl p-4 sm:p-5 w-44 sm:w-48 text-center pointer-events-auto z-20"
+                className="glass-badge-luxury absolute -top-4 right-2 sm:top-8 sm:right-2 rounded-2xl p-4 sm:p-5 w-44 sm:w-48 text-center pointer-events-auto z-20"
                 variants={floatingBadge}
                 animate="animate"
               >

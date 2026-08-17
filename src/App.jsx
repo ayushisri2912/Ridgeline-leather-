@@ -6,12 +6,14 @@ import ScrollToTop from './Components/ScrollToTop'
 
 const App = () => {
   return (
-    <>
+    <div className="w-full max-w-full overflow-x-hidden min-h-screen flex flex-col justify-between bg-[#FAF8F5]">
       <Navbar />
       <ScrollToTop />
-      <AppRoutes />
+      <main className="flex-1 w-full max-w-full overflow-x-hidden">
+        <AppRoutes />
+      </main>
       <Footer />
-    </>
+    </div>
   )
 }
 
