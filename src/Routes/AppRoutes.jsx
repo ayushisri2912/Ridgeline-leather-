@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import Home from '../Pages/Home'
 import AllProducts from '../Pages/shopPages/AllProducts'
 import NewArrivals from '../Pages/shopPages/NewArrivals'
@@ -24,14 +24,16 @@ const AppRoutes = () => {
       <Route path='/hunting/cartridge-belts' element={<CartridgeBeltsPage />} />
       <Route path='/hunting/gun-slings' element={<GunSlingsPage />} />
       <Route path='/hunting/accessories' element={<HuntingAccessoriesPage />} />
-      <Route path='/bags/travel-bags' element={<LeatherBagsPage />} />
+      
+      {/* Leather Bags Submenu Pages */}
       <Route path='/bags/duffel-bags' element={<LeatherBagsPage categoryType="duffel" />} />
       <Route path='/bags/messenger-bags' element={<LeatherBagsPage categoryType="messenger" />} />
-      <Route path='/bags/backpacks' element={<LeatherBagsPage />} />
+      <Route path='/bags/backpacks' element={<LeatherBagsPage categoryType="backpack" />} />
+      <Route path='/bags/tote-bags' element={<LeatherBagsPage categoryType="tote" />} />
+      <Route path='/bags/travel-bags' element={<LeatherBagsPage categoryType="travel" />} />
+      
       <Route path='/product/:id' element={<ProductDetailPage />} />
       <Route path='/product-detail' element={<ProductDetailPage />} />
-
-
     </Routes>
   )
 }

@@ -26,6 +26,7 @@ const BagsFilterSidebar = ({
     "Duffel Bags",
     "Messenger Bags",
     "Backpacks",
+    "Tote Bags",
     "Travel Bags",
   ];
 

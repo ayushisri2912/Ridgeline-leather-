@@ -18,10 +18,19 @@ const LeatherBagsPage = ({ categoryType }) => {
     categoryType === "messenger" || location.pathname.includes("messenger");
   const isDuffel =
     categoryType === "duffel" || location.pathname.includes("duffel");
+  const isBackpack =
+    categoryType === "backpack" || location.pathname.includes("backpack");
+  const isTote =
+    categoryType === "tote" || location.pathname.includes("tote");
+  const isTravel =
+    categoryType === "travel" || location.pathname.includes("travel");
 
   const [selectedCategories, setSelectedCategories] = useState(() => {
     if (isMessenger) return ["Messenger Bags"];
     if (isDuffel) return ["Duffel Bags"];
+    if (isBackpack) return ["Backpacks"];
+    if (isTote) return ["Tote Bags"];
+    if (isTravel) return ["Travel Bags"];
     return [];
   });
 
@@ -40,8 +49,16 @@ const LeatherBagsPage = ({ categoryType }) => {
       setSelectedCategories(["Messenger Bags"]);
     } else if (isDuffel) {
       setSelectedCategories(["Duffel Bags"]);
+    } else if (isBackpack) {
+      setSelectedCategories(["Backpacks"]);
+    } else if (isTote) {
+      setSelectedCategories(["Tote Bags"]);
+    } else if (isTravel) {
+      setSelectedCategories(["Travel Bags"]);
+    } else {
+      setSelectedCategories([]);
     }
-  }, [isMessenger, isDuffel]);
+  }, [isMessenger, isDuffel, isBackpack, isTote, isTravel]);
 
   const scrollToProducts = () => {
     if (productGridRef.current) {
@@ -162,7 +179,7 @@ const LeatherBagsPage = ({ categoryType }) => {
   let heroTitle = "Heritage Leather Travel Bags";
   let heroDescription =
     "Handcrafted from full-grain vegetable-tanned bridle leather, engineered for timeless journeys and effortless elegance.";
-  let heroImage;
+  let heroImage = duffelHeroImg;
 
   if (isMessenger) {
     heroTitle = "Premium Leather Messenger Bags";
@@ -173,6 +190,21 @@ const LeatherBagsPage = ({ categoryType }) => {
     heroTitle = "Luxury Leather Duffel Bags";
     heroDescription =
       "Handcrafted for weekend escapes and refined travel, our leather duffel bags combine generous storage with timeless sophistication.";
+    heroImage = duffelHeroImg;
+  } else if (isBackpack) {
+    heroTitle = "Artisan Leather Backpacks";
+    heroDescription =
+      "Ergonomically designed and expertly stitched, our leather backpacks combine rugged durability with sophisticated urban style.";
+    heroImage = deskHeroImg;
+  } else if (isTote) {
+    heroTitle = "Handcrafted Leather Tote Bags";
+    heroDescription =
+      "Designed for everyday versatility and timeless elegance, our full-grain leather tote bags effortlessly transition from workdays to weekend outings.";
+    heroImage = deskHeroImg;
+  } else if (isTravel) {
+    heroTitle = "Heritage Leather Travel Bags";
+    heroDescription =
+      "Handcrafted from full-grain vegetable-tanned bridle leather, engineered for timeless journeys and effortless elegance.";
     heroImage = duffelHeroImg;
   }
 
