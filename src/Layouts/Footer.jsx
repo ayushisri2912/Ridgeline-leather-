@@ -148,6 +148,11 @@ const Footer = () => {
 
             <ul className="space-y-2.5 text-xs sm:text-sm text-[#E9DFD1]/80 font-light">
               <li>
+                <Link to="/stores" className="hover:text-[#C79A63] transition-colors duration-200">
+                  Store Locator
+                </Link>
+              </li>
+              <li>
                 <Link to="/contact" className="hover:text-[#C79A63] transition-colors duration-200">
                   Contact Us
                 </Link>
